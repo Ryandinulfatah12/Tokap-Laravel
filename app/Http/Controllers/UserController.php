@@ -14,4 +14,13 @@ class UserController extends Controller
    		return view('admin.pages.user.daftar',['data'=>$data]);
 	}
     
+    public function add()
+    {
+    	return view('admin.pages.user.add');
+    }
+
+	public function save(Request $req)
+	{
+		return 'Fungsi Save';
+	}
 }
