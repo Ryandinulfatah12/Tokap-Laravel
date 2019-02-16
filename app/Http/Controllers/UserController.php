@@ -52,6 +52,14 @@ class UserController extends Controller
 
 	public function update(Request $req)
 	{
+
+		\Validator::make($req->all(),[
+			'name'=>'required|between:3,100',
+			'email'=>'required|unique:users,email,'.$req->id,
+			'password'=>'nullable|min:6',
+			'repassword'=>'same:password',
+			'akses'=>'required',
+			])->validate();
 		return 'Fungsi Update';
 	}
 
