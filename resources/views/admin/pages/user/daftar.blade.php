@@ -46,7 +46,7 @@
 		<td>{{ $dt->email }}</td>
 		<td>{{ $dt->akses }}</td>
 		<td>
-			<a href="#" class="btn btn-success btn-sm">
+			<a href="{{ route('admin.user.edit',['id'=>$dt->id]) }}" class="btn btn-success btn-sm">
 				<i class="fa fa-w fa-edit"></i>
 			</a>
 			@if($dt->id !=Auth::id())
