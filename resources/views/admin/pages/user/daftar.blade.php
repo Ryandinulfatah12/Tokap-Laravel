@@ -59,7 +59,9 @@
 				<i class="fa fa-w fa-edit"></i>
 			</a>
 			@if($dt->id !=Auth::id())
-			<button class="btn btn-danger btn-sm" type="button">
+			<button class="btn btn-danger btn-sm btn-trash"
+			data-id="{{ $dt->id }}" 
+			type="button">
 				<i class="fa fa-w fa-trash"></i>
 			</button>
 			@endif
@@ -73,3 +75,54 @@
 	->links('vendor.pagination.bootstrap-4')
 }}
 @endsection
+
+@push('modal')
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			
+		<div class="modal-header">
+			<h5 class="modal-title">Delete</h5>
+			<button class="close" type="button" data-dismiss="modal">
+				<span>x</span>
+			</button>
+		</div><!--End Modal header-->
+
+		<div class="modal-body">
+			Apakah anda yakin ingin menghapusnya?
+			<form id="form-delete" method="post" action="#">
+				{{ csrf_field() }}
+				{{ method_field('delete') }}
+				<input type="hidden" name="id" id="input-id">
+				
+			</form>
+		</div><!--End Modal body-->
+
+		<div class="modal-footer">
+			<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+			<button class="btn btn-primary btn-delete" type="button">Delete</button>
+		</div>
+
+		</div><!--End Modal content-->
+	</div><!--End Modal dialog-->
+</div>
+@endpush
+
+@push('js')
+<script type="text/javascript">
+	$(function() {
+		$('.btn-trash').click(function(){
+		id = $(this).attr('data-id');
+		$('#input-id').val(id);
+		$('#deleteModal').modal('show');
+	});
+
+	$('.btn-delete').click(function(){
+		alert($('#input-id').val() );
+
+	});
+
+})		
+
+</script>
+@endpush
