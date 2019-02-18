@@ -24,6 +24,7 @@ Route::group(['middleware'=>['auth']], function(){
 		Route::prefix('user')->group(function(){
 
 			Route::get('/','UserController@daftar')->name('admin.user')->middleware('akses.admin');
+			Route::delete('/','UserController@delete')->middleware('akses.admin');
 
 			Route::get('/add','UserController@add')->name('admin.user.add')->middleware('akses.admin');
 			Route::post('/add','UserController@save')->middleware('akses.admin');
