@@ -13,5 +13,12 @@
             <span>User</span>
           </a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('admin.kategori')}}">
+            <i class="fas fa-fw fa-list"></i>
+            <span>Kategori</span>
+          </a>
+        </li>        
         @endif
 </ul>
