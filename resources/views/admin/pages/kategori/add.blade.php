@@ -1,8 +1,17 @@
 @extends('admin.main')
 @section('title','Kategori Tambah')
 @section('content')
-<h1>Kategori<small class="mute">Tambah</small></h1>
+<h1>Kategori <small class="mute">Tambah</small></h1>
 <hr>
+
+@if( session('result') == 'fail' )
+<div class="alert alert-danger alert dismissible fade show">
+	<strong>Failed!</strong>Gagal Disimpan!.
+	<button type="button" class="close" data-dismiss="alert">\
+	&times;
+</button>
+</div>
+@endif
 
 <div class="row">
 	<div class="col-md-6 mb-3">
