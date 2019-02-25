@@ -37,7 +37,7 @@ Route::group(['prefix'=>'admin','middleware'=>['auth']], function(){
 			Route::get('/setting','UserSettingController@form')->name('admin.user.setting');
 			Route::post('/setting','UserSettingController@update');
 	});
-	/* User */
+	/* Kategori */
 	Route::group(['prefix'=>'kategori','middleware'=>'akses.admin'], function(){
 		Route::get('/','KategoriController@daftar')->name('admin.kategori');
 		Route::get('/add','KategoriController@add')->name('admin.kategori.add');
