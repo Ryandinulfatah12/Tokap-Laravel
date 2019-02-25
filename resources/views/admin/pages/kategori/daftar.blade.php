@@ -44,7 +44,8 @@
 	<tr>
 		<td>{{ $dt->nama_kategori }}</td>
 		<td>
-			<a href="#" class="btn btn-success btn-sm">
+			<a href="{{route('admin.kategori.edit',['id'=>$dt->id])}}" 
+				class="btn btn-success btn-sm">
 				<i class="fa fa-w fa-edit"></i>
 			</a>
 
