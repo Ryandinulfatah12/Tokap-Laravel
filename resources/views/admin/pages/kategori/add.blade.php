@@ -6,7 +6,7 @@
 
 @if( session('result') == 'fail' )
 <div class="alert alert-danger alert dismissible fade show">
-	<strong>Failed!</strong>Gagal Disimpan!.
+	<strong>Failed! </strong>Gagal Disimpan!.
 	<button type="button" class="close" data-dismiss="alert">\
 	&times;
 </button>
