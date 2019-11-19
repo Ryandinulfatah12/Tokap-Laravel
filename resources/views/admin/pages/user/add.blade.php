@@ -74,6 +74,7 @@
 							<option value="" {{ $val==""?'selected':'' }} >Pilih Akses Sebagai </option>
 							<option value="operator" {{ $val=="operator"?'selected':'' }} >Operator</option>
 							<option value="admin" {{ $val=="admin"?'selected':'' }} >Administrator</option>
+							<option value="asisten" {{$val=="asisten"?'selected':''}}>Asisten Admin</option>
 						</select>
 						@if($errors->has('repassword'))
 						<div class="invalid-feedback">{{$errors->first('akses')}}</div>

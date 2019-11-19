@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
     <title>Tokap Ryan - @yield('title')</title>
-    <link rel="icon" type="png/image" href="{{ url('favicon.png') }}">
+    <link rel="icon" type="png/image" href="{{ url('favicon2.png') }}">
     <!-- Bootstrap core CSS-->
     <link href="{{ url('theme-sbadmin/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 

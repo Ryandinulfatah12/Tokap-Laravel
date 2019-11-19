@@ -38,13 +38,23 @@ Route::group(['prefix'=>'admin','middleware'=>['auth']], function(){
 			Route::post('/setting','UserSettingController@update');
 	});
 	/* Kategori */
-	Route::group(['prefix'=>'kategori','middleware'=>'akses.admin'], function(){
+	Route::group(['prefix'=>'kategori','middleware'=>'akses.admin:asisten'], function(){
 		Route::get('/','KategoriController@daftar')->name('admin.kategori');
+		Route::delete('/','KategoriController@delete')->middleware('akses.admin');
+		
 		Route::get('/add','KategoriController@add')->name('admin.kategori.add');
 		Route::post('/add','KategoriController@save');
 		Route::get('/edit/{id}','KategoriController@edit')->name('admin.kategori.edit');
 		Route::post('/edit/{id}','KategoriController@update');
 	});
+
+	/* Produk */
+	Route::group(['prefix'=>'produk','middleware'=>'akses.admin:asisten'], function(){
+		Route::get('/','ProdukController@daftar')->name('admin.produk');
+		Route::get('/add','ProdukController@add')->name('admin.produk.add');
+		Route::post('/add','ProdukController@save');
+		});
+
 });
 
 Auth::routes();
